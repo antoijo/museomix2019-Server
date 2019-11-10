@@ -9,26 +9,28 @@
   </head>
   <body>
       <div class="container" id="Player1">
-        <button id="1" onclick="buttonClicked()">(1) header</button>
-        <button>(2) nav</button>
-        <button>(3) article</button>
-        <button>(4) footer</button>
-        <button>(5) aside</button>
-        <button>(6) aside</button>
+        <button onclick="button1Clicked()">(1)</button>
+        <button onclick="button2Clicked()">(2)</button>
+        <button onclick="button3Clicked()">(3)</button>
+        <button onclick="button4Clicked()">(4)</button>
+        <button onclick="button5Clicked()">(5)</button>
+        <button onclick="button6Clicked()">(6)</button>
       </div>
       <div class="container" id="Player2">
-        <button>(1)</button>
-        <button>(2)</button>
-        <button>(3) Validator</button>
-        <button>(4)</button>
-        <button>(5)</button>
-        <button>(6)</button>
+        <button onclick="button7Clicked()">(1)</button>
+        <button onclick="button8Clicked()">(2)</button>
+        <button onclick="button9Clicked()">(3) Validator</button>
+        <button onclick="button10Clicked()">(4)</button>
+        <button onclick="button11Clicked()">(5)</button>
+        <button onclick="button12Clicked()">(6)</button>
       </div>
+      <button onclick="startClicked()">START</button>
+      <button onclick="retryClicked()">RETRY</button>
     </div> 
   </body>
 
   <script>
-    var socket = io.connect('http://localhost:1010');
+    var socket = io.connect('http://10.217.185.84:1010');
     
     socket.on('news', function (data) {
         socket.emit('test', { my: 'data' });
@@ -37,9 +39,67 @@
     socket.emit('test', { my: 'data' });
 
 
-    /*function buttonClicked() {
-      socket.emit('button', )  
-    }*/
+    function button1Clicked() {
+      console.log("button 1 clicked");
+      socket.emit('player1', '1' );  
+    }
+    function button2Clicked() {
+      console.log("button 2 clicked");
+      socket.emit('player1', '2' );  
+    }
+    function button3Clicked() {
+      console.log("button 3 clicked");
+      socket.emit('player1', '3' );  
+    }
+    function button4Clicked() {
+      console.log("button 4 clicked");
+      socket.emit('player1', '4' );  
+    }
+    function button5Clicked() {
+      console.log("button 5 clicked");
+      socket.emit('player1', '5' );  
+    }
+    function button6Clicked() {
+      console.log("button 6 clicked");
+      socket.emit('player1', '6' );  
+    }
+
+
+
+
+    function button7Clicked() {
+      console.log("button 7 clicked");
+      socket.emit('player2', '1' );  
+    }
+    function button8Clicked() {
+      console.log("button 8 clicked");
+      socket.emit('player2', '2' );  
+    }
+    function button9Clicked() {
+      console.log("button 9 clicked VALIDATOR");
+      socket.emit('player2', '3' );  
+    }
+    function button10Clicked() {
+      console.log("button 10 clicked");
+      socket.emit('player2', '4' );  
+    }
+    function button11Clicked() {
+      console.log("button 11 clicked");
+      socket.emit('player2', '5' );  
+    }
+    function button12Clicked() {
+      console.log("button 12 clicked");
+      socket.emit('player2', '6' );  
+    }
+
+    function startClicked() {
+      console.log("start button clicked");
+      socket.emit('start', '5' );  
+    }
+    function retryClicked() {
+      console.log("retry button  clicked");
+      socket.emit('retry', '6' );  
+    }
 
    /* $(function() {
       var rangePercent = $('[type="range"]').val();

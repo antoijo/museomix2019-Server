@@ -25,16 +25,12 @@ body {
 div, nav, section, button {
   padding: 10px;
   color: #fff;
-  border: none;
-  pointer-events: none; }
+  border: none; }
 
 button {
   background: dodgerblue; }
 
 button:active {
-  background: olivedrab; }
-
-button:focus {
   background: olivedrab; }
 
 section {

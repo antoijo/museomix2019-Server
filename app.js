@@ -141,7 +141,7 @@ server.listen(1010);
 // When a client connects, we note it in the console
 io.on('connection', function (socket) {
   console.log('CLIENT CONNECTED!');
-  socket.emit('test index', "rien");
+  socket.emit('testfast', "rien");
   socket.on('admin', function (data) {
     console.log("admin value", data);
     socket.broadcast.emit('display', data);
@@ -151,6 +151,27 @@ io.on('connection', function (socket) {
     console.log("test success", data);
     socket.broadcast.emit('test success', data);
   });
+
+
+  socket.on('player1', function (data) {
+    console.log('admin player1 clicked', data);
+    socket.broadcast.emit('player1', data);
+  })
+
+  socket.on('player2', function (data) {
+    console.log('admin player2 clicked', data);
+    socket.broadcast.emit('player2', data);
+  })
+
+  socket.on('start', function (data) {
+    console.log('admin start clicked', data);
+    socket.broadcast.emit('start', data);
+  })
+
+  socket.on('retry', function (data) {
+    console.log('admin retry clicked', data);
+    socket.broadcast.emit('retry', data);
+  })
 });
 
 module.exports = app;
