@@ -9,7 +9,7 @@
   </head>
   <body>
       <div class="container" id="Player1">
-        <button id="1">(1) header</button>
+        <button id="1" onclick="buttonClicked()">(1) header</button>
         <button>(2) nav</button>
         <button>(3) article</button>
         <button>(4) footer</button>
@@ -27,4 +27,31 @@
     </div> 
   </body>
 
+  <script>
+    var socket = io.connect('http://localhost:1010');
+    
+    socket.on('news', function (data) {
+        socket.emit('test', { my: 'data' });
+    });
+
+    socket.emit('test', { my: 'data' });
+
+
+    /*function buttonClicked() {
+      socket.emit('button', )  
+    }*/
+
+   /* $(function() {
+      var rangePercent = $('[type="range"]').val();
+      $('[type="range"]').on('change input', function() {
+        rangePercent = $('[type="range"]').val();
+        $('output').text(rangePercent);
+        $('[type="range"]').css('filter', 'hue-rotate(-' + rangePercent + 'deg)');
+        
+        socket.emit('admin', rangePercent);
+        socket.broadcast.emit('admin', rangePercent);
+        console.log("new value ", rangePercent);
+      });
+    });*/
+  </script>
 </html>

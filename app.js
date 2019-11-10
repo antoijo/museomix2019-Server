@@ -136,7 +136,7 @@ function getHeaterPercent(){
 
 // Loading socket.io
 var io = require('socket.io')(server);
-server.listen(80);
+server.listen(1010);
 
 // When a client connects, we note it in the console
 io.on('connection', function (socket) {
@@ -145,6 +145,11 @@ io.on('connection', function (socket) {
   socket.on('admin', function (data) {
     console.log("admin value", data);
     socket.broadcast.emit('display', data);
+  });
+
+  socket.on('test', function (data) {
+    console.log("test success", data);
+    socket.broadcast.emit('test success', data);
   });
 });
 
