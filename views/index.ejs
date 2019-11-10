@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/javascripts/socket.io.js"></script>
     <script src="/javascripts/memomix.js"></script>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-      
-    <h1>Grid Layout : auto-flow 2</h1>
-    <div class="container">
-      <header>(1) header</header>
-      <nav>(2) nav</nav>
-      <article>(3) article</article>
-      <footer>(4) footer</footer>
-      <aside>(5) aside</aside>
-    </div>
+      <div class="container" id="Player1">
+        <button id="1">(1) header</button>
+        <button>(2) nav</button>
+        <button>(3) article</button>
+        <button>(4) footer</button>
+        <button>(5) aside</button>
+        <button>(6) aside</button>
+      </div>
+      <div class="container" id="Player2">
+        <button>(1)</button>
+        <button>(2)</button>
+        <button>(3) Validator</button>
+        <button>(4)</button>
+        <button>(5)</button>
+        <button>(6)</button>
+      </div>
+    </div> 
   </body>
 
 </html>
